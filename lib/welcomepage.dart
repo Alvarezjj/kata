@@ -41,7 +41,7 @@ class _WelcomePageState extends State<WelcomePage>
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-     _controller1.dispose();
+    _controller1.dispose();
     _controller2.dispose();
   }
 
@@ -96,17 +96,17 @@ class _WelcomePageState extends State<WelcomePage>
                 height: 70,
               ),
               boxContainer(
-                  'assets/images/g_blog.png', 'Continue with Google', null),
+                  'assets/images/g_blog.png', 'Continue with Google',),
               SizedBox(
                 height: 20,
               ),
               boxContainer(
-                  'assets/images/f_blog.png', 'Continue with Facebook', null),
+                  'assets/images/f_blog.png', 'Continue with Facebook',),
               SizedBox(
                 height: 20,
               ),
               boxContainer('assets/images/e_blog.png', 'Continue with Email',
-                  onEmailClick()),
+                ),
               SizedBox(
                 height: 20,
               ),
@@ -136,39 +136,36 @@ class _WelcomePageState extends State<WelcomePage>
     );
   }
 
-  onEmailClick()  {
+  /*onEmailClick()  {
    Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SignUppage()));
-  }
+  }*/
 
-  Widget boxContainer(String path, String text, onclick) {
+  Widget boxContainer(String path, String text) {
     return SlideTransition(
       position: animation2,
-      child: InkWell(
-        onTap: onclick,
-        child: Container(
-          height: 60,
-          width: MediaQuery.of(context).size.width,
-          child: Card(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    path,
-                    height: 25,
-                    width: 25,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(text,
-                      style: TextStyle(fontSize: 16, color: Colors.black87)),
-                ],
-              ),
+      child: Container(
+        height: 60,
+        width: MediaQuery.of(context).size.width,
+        child: Card(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 10,
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  path,
+                  height: 25,
+                  width: 25,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(text,
+                    style: TextStyle(fontSize: 16, color: Colors.black87)),
+              ],
             ),
           ),
         ),
